@@ -1,0 +1,347 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{39438FE6-1FB4-47D7-8022-CEF0DF98FCC9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>RealSense.Tools.MyTester</RootNamespace>
+    <AssemblyName>RealSense.Tools.MyTester</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.4.4.0\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonServiceLocator, Version=2.0.5.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.2.0.5\lib\net46\CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="FontAwesome.WPF, Version=4.7.0.37774, Culture=neutral, PublicKeyToken=0758b07a11a4f466, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.WPF.4.7.0.9\lib\net40\FontAwesome.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight, Version=5.4.1.0, Culture=neutral, PublicKeyToken=e7570ab207bcb616, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\GalaSoft.MvvmLight.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Extras, Version=5.4.1.0, Culture=neutral, PublicKeyToken=669f0b5e8f868abf, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\GalaSoft.MvvmLight.Extras.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Platform, Version=5.4.1.0, Culture=neutral, PublicKeyToken=5f873c45e98af8a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\GalaSoft.MvvmLight.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.AvalonEdit, Version=6.0.0.0, Culture=neutral, PublicKeyToken=9cc39be672370310, processorArchitecture=MSIL">
+      <HintPath>..\packages\AvalonEdit.6.0.0\lib\net45\ICSharpCode.AvalonEdit.dll</HintPath>
+    </Reference>
+    <Reference Include="IVCam.Tools.CamerasSdk.Cameras, Version=7.2.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\IVCam.Tools.CamerasSdk.Nuget.Core.7.2.7\lib\net46\IVCam.Tools.CamerasSdk.Cameras.dll</HintPath>
+    </Reference>
+    <Reference Include="IVCam.Tools.CamerasSdk.Cameras.FrameServer, Version=7.2.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\IVCam.Tools.CamerasSdk.Nuget.Core.7.2.7\lib\net46\IVCam.Tools.CamerasSdk.Cameras.FrameServer.dll</HintPath>
+    </Reference>
+    <Reference Include="IVCam.Tools.CamerasSdk.Cameras.FrameServer.DS5, Version=7.2.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\IVCam.Tools.CamerasSdk.Nuget.DS5.7.2.7\lib\net46\IVCam.Tools.CamerasSdk.Cameras.FrameServer.DS5.dll</HintPath>
+    </Reference>
+    <Reference Include="IVCam.Tools.CamerasSdk.Cameras.Generic, Version=7.2.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\IVCam.Tools.CamerasSdk.Nuget.Core.7.2.7\lib\net46\IVCam.Tools.CamerasSdk.Cameras.Generic.dll</HintPath>
+    </Reference>
+    <Reference Include="IVCam.Tools.CamerasSdk.Cameras.Generic.DS5, Version=7.2.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\IVCam.Tools.CamerasSdk.Nuget.DS5.7.2.7\lib\net46\IVCam.Tools.CamerasSdk.Cameras.Generic.DS5.dll</HintPath>
+    </Reference>
+    <Reference Include="IVCam.Tools.CamerasSdk.Cameras.Remote.DS5, Version=7.2.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\IVCam.Tools.CamerasSdk.Nuget.DS5.7.2.7\lib\net46\IVCam.Tools.CamerasSdk.Cameras.Remote.DS5.dll</HintPath>
+    </Reference>
+    <Reference Include="IVCam.Tools.CamerasSdk.Common, Version=7.2.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\IVCam.Tools.CamerasSdk.Nuget.Core.7.2.7\lib\net46\IVCam.Tools.CamerasSdk.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="IVCam.Tools.CamerasSdk.Images, Version=7.2.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\IVCam.Tools.CamerasSdk.Nuget.Core.7.2.7\lib\net46\IVCam.Tools.CamerasSdk.Images.dll</HintPath>
+    </Reference>
+    <Reference Include="IVCam.Tools.Infrastructure.Logging, Version=2.7.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\IVCam.Tools.Infrastructure.Logging.2.7.0\lib\net45\IVCam.Tools.Infrastructure.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="IVCam.Tools.Infrastructure.TesterLoggerParser, Version=2.7.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\IVCam.Tools.Infrastructure.Logging.2.7.0\lib\net45\IVCam.Tools.Infrastructure.TesterLoggerParser.dll</HintPath>
+    </Reference>
+    <Reference Include="IVCam.Tools.LoggerUI.LoggerUserControl, Version=1.5.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\IVCam.Tools.LoggerUI.MD.1.5.8\lib\net461\IVCam.Tools.LoggerUI.LoggerUserControl.dll</HintPath>
+    </Reference>
+    <Reference Include="IVCam.Tools.LoggerUI.TesterLoggerParser, Version=1.5.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\IVCam.Tools.LoggerUI.MD.1.5.8\lib\net461\IVCam.Tools.LoggerUI.TesterLoggerParser.dll</HintPath>
+    </Reference>
+    <Reference Include="IVCAM.Tools.SPARK.API, Version=0.1.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SparkApiPackage.0.1.5\lib\net\IVCAM.Tools.SPARK.API.dll</HintPath>
+    </Reference>
+    <Reference Include="IVCAM.Tools.SysMate.Infrastructure, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SysMate.Infrastructure.1.3.0\lib\net45\IVCAM.Tools.SysMate.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="IVCAM.Tools.TestersCore.Configuration, Version=6.8.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\IVCAM.Tools.TestersCore.6.8.0\lib\net451\IVCAM.Tools.TestersCore.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="IVCAM.Tools.TestersCore.Device, Version=6.8.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\IVCAM.Tools.TestersCore.6.8.0\lib\net451\IVCAM.Tools.TestersCore.Device.dll</HintPath>
+    </Reference>
+    <Reference Include="IVCAM.Tools.TestersCore.Test, Version=6.8.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\IVCAM.Tools.TestersCore.6.8.0\lib\net451\IVCAM.Tools.TestersCore.Test.dll</HintPath>
+    </Reference>
+    <Reference Include="IVCAM.Tools.TestersCore.TestExecution, Version=6.8.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\IVCAM.Tools.TestersCore.6.8.0\lib\net451\IVCAM.Tools.TestersCore.TestExecution.dll</HintPath>
+    </Reference>
+    <Reference Include="IVCAM.Tools.TestersCore.Utils, Version=6.8.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\IVCAM.Tools.TestersCore.6.8.0\lib\net451\IVCAM.Tools.TestersCore.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignColors, Version=1.2.6.1513, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignColors.1.2.6\lib\net45\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=3.1.3.1513, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignThemes.3.1.3\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.WindowsAPICodePack-Core.1.1.0.2\lib\Microsoft.WindowsAPICodePack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.Shell, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.WindowsAPICodePack-Shell.1.1.0.0\lib\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.ShellExtensions, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.WindowsAPICodePack-Shell.1.1.0.0\lib\Microsoft.WindowsAPICodePack.ShellExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xaml.Behaviors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Xaml.Behaviors.Wpf.1.1.19\lib\net45\Microsoft.Xaml.Behaviors.dll</HintPath>
+    </Reference>
+    <Reference Include="Moq, Version=4.13.0.0, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+      <HintPath>..\packages\Moq.4.13.1\lib\net45\Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="PerCHW.Tools.CameraHW.Commands, Version=2.37.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PerCHW.Tools.CameraHW.Nuget.Core.2.37.1\lib\net46\PerCHW.Tools.CameraHW.Commands.dll</HintPath>
+    </Reference>
+    <Reference Include="PerCHW.Tools.CameraHW.Commands.Generic, Version=2.37.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PerCHW.Tools.CameraHW.Nuget.DS5.Full.2.37.1\lib\net46\PerCHW.Tools.CameraHW.Commands.Generic.dll</HintPath>
+    </Reference>
+    <Reference Include="PerCHW.Tools.CameraHW.Commands.Remote, Version=2.37.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PerCHW.Tools.CameraHW.Nuget.DS5.Full.2.37.1\lib\net46\PerCHW.Tools.CameraHW.Commands.Remote.dll</HintPath>
+    </Reference>
+    <Reference Include="PerCHW.Tools.CameraHW.Common, Version=2.37.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PerCHW.Tools.CameraHW.Nuget.Core.2.37.1\lib\net46\PerCHW.Tools.CameraHW.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="PerCHW.Tools.CameraHW.DeviceInfo, Version=2.37.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PerCHW.Tools.CameraHW.Nuget.Core.2.37.1\lib\net46\PerCHW.Tools.CameraHW.DeviceInfo.dll</HintPath>
+    </Reference>
+    <Reference Include="PerCHW.Tools.CameraHW.DeviceInfo.DS5, Version=2.37.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PerCHW.Tools.CameraHW.Nuget.DS5.Full.2.37.1\lib\net46\PerCHW.Tools.CameraHW.DeviceInfo.DS5.dll</HintPath>
+    </Reference>
+    <Reference Include="PerCHW.Tools.CameraHW.DeviceInfo.Service, Version=2.37.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PerCHW.Tools.CameraHW.Nuget.Core.2.37.1\lib\net46\PerCHW.Tools.CameraHW.DeviceInfo.Service.dll</HintPath>
+    </Reference>
+    <Reference Include="PerCHW.Tools.CameraHW.EEPRom, Version=2.37.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PerCHW.Tools.CameraHW.Nuget.Core.2.37.1\lib\net46\PerCHW.Tools.CameraHW.EEPRom.dll</HintPath>
+    </Reference>
+    <Reference Include="PerCHW.Tools.CameraHW.EEPRom.DS5, Version=2.37.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PerCHW.Tools.CameraHW.Nuget.DS5.Full.2.37.1\lib\net46\PerCHW.Tools.CameraHW.EEPRom.DS5.dll</HintPath>
+    </Reference>
+    <Reference Include="PerCHW.Tools.CameraHW.EEPRom.DS5.TM, Version=2.37.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PerCHW.Tools.CameraHW.Nuget.DS5.Full.2.37.1\lib\net46\PerCHW.Tools.CameraHW.EEPRom.DS5.TM.dll</HintPath>
+    </Reference>
+    <Reference Include="PerCHW.Tools.CameraHW.EEPRom.Modeling, Version=2.37.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PerCHW.Tools.CameraHW.Nuget.Core.2.37.1\lib\net46\PerCHW.Tools.CameraHW.EEPRom.Modeling.dll</HintPath>
+    </Reference>
+    <Reference Include="PerCHW.Tools.CameraHW.EEPRom.Service, Version=2.37.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PerCHW.Tools.CameraHW.Nuget.Core.2.37.1\lib\net46\PerCHW.Tools.CameraHW.EEPRom.Service.dll</HintPath>
+    </Reference>
+    <Reference Include="PerCHW.Tools.CameraHW.Facade, Version=2.37.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PerCHW.Tools.CameraHW.Nuget.Core.2.37.1\lib\net46\PerCHW.Tools.CameraHW.Facade.dll</HintPath>
+    </Reference>
+    <Reference Include="PerCHW.Tools.CameraHW.Facade.Interface, Version=2.37.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PerCHW.Tools.CameraHW.Nuget.Core.2.37.1\lib\net46\PerCHW.Tools.CameraHW.Facade.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="PerCHW.Tools.CameraHW.Flash, Version=2.37.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PerCHW.Tools.CameraHW.Nuget.Core.2.37.1\lib\net46\PerCHW.Tools.CameraHW.Flash.dll</HintPath>
+    </Reference>
+    <Reference Include="PerCHW.Tools.CameraHW.Flash.Burn, Version=2.37.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PerCHW.Tools.CameraHW.Nuget.Core.2.37.1\lib\net46\PerCHW.Tools.CameraHW.Flash.Burn.dll</HintPath>
+    </Reference>
+    <Reference Include="PerCHW.Tools.CameraHW.Flash.DS5, Version=2.37.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PerCHW.Tools.CameraHW.Nuget.DS5.Full.2.37.1\lib\net46\PerCHW.Tools.CameraHW.Flash.DS5.dll</HintPath>
+    </Reference>
+    <Reference Include="PerCHW.Tools.CameraHW.Flash.Sections, Version=2.37.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PerCHW.Tools.CameraHW.Nuget.Core.2.37.1\lib\net46\PerCHW.Tools.CameraHW.Flash.Sections.dll</HintPath>
+    </Reference>
+    <Reference Include="PerCHW.Tools.CameraHW.FlashService, Version=2.37.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PerCHW.Tools.CameraHW.Nuget.Core.2.37.1\lib\net46\PerCHW.Tools.CameraHW.FlashService.dll</HintPath>
+    </Reference>
+    <Reference Include="PerCHW.Tools.CameraHW.HWLogger, Version=2.37.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PerCHW.Tools.CameraHW.Nuget.Core.2.37.1\lib\net46\PerCHW.Tools.CameraHW.HWLogger.dll</HintPath>
+    </Reference>
+    <Reference Include="PerCHW.Tools.CameraHW.HWLogger.DS5, Version=2.37.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PerCHW.Tools.CameraHW.Nuget.DS5.Full.2.37.1\lib\net46\PerCHW.Tools.CameraHW.HWLogger.DS5.dll</HintPath>
+    </Reference>
+    <Reference Include="PerCHW.Tools.CameraHW.HWLogger.ServiceProvider, Version=2.37.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PerCHW.Tools.CameraHW.Nuget.Core.2.37.1\lib\net46\PerCHW.Tools.CameraHW.HWLogger.ServiceProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="PerCHW.Tools.CameraHW.Registers, Version=2.37.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PerCHW.Tools.CameraHW.Nuget.Core.2.37.1\lib\net46\PerCHW.Tools.CameraHW.Registers.dll</HintPath>
+    </Reference>
+    <Reference Include="PerCHW.Tools.CameraHW.Registers.DS5, Version=2.37.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PerCHW.Tools.CameraHW.Nuget.DS5.Full.2.37.1\lib\net46\PerCHW.Tools.CameraHW.Registers.DS5.dll</HintPath>
+    </Reference>
+    <Reference Include="PerCHW.Tools.CameraHW.Registers.ServiceProvider, Version=2.37.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PerCHW.Tools.CameraHW.Nuget.Core.2.37.1\lib\net46\PerCHW.Tools.CameraHW.Registers.ServiceProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="PerCHW.Tools.CameraHW.Tables, Version=2.37.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PerCHW.Tools.CameraHW.Nuget.Core.2.37.1\lib\net46\PerCHW.Tools.CameraHW.Tables.dll</HintPath>
+    </Reference>
+    <Reference Include="PerCHW.Tools.CameraHW.Tables.DS5, Version=2.37.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PerCHW.Tools.CameraHW.Nuget.DS5.Full.2.37.1\lib\net46\PerCHW.Tools.CameraHW.Tables.DS5.dll</HintPath>
+    </Reference>
+    <Reference Include="PerCHW.Tools.CameraHW.Tables.ServiceProvider, Version=2.37.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PerCHW.Tools.CameraHW.Nuget.Core.2.37.1\lib\net46\PerCHW.Tools.CameraHW.Tables.ServiceProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="PercHW.Tools.TesterUI.Common, Version=4.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RealSense.Tools.TesterUI.4.5.0\lib\net461\PercHW.Tools.TesterUI.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="PercHW.Tools.TesterUI.Main, Version=4.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RealSense.Tools.TesterUI.4.5.0\lib\net461\PercHW.Tools.TesterUI.Main.dll</HintPath>
+    </Reference>
+    <Reference Include="PercHW.Tools.TesterUI.Settings, Version=4.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RealSense.Tools.TesterUI.4.5.0\lib\net461\PercHW.Tools.TesterUI.Settings.dll</HintPath>
+    </Reference>
+    <Reference Include="RealSense.Tools.AppTemplate, Version=1.7.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RealSense.Tools.AppTemplate.LightNuget.1.7.1\lib\net461\RealSense.Tools.AppTemplate.dll</HintPath>
+    </Reference>
+    <Reference Include="RealSense.Tools.TesterUI.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RealSense.Tools.TesterUI.Common.4.5.0\lib\net461\RealSense.Tools.TesterUI.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\IVCam.Tools.CamerasSdk.Nuget.Core.7.2.7\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.1\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Xceed.Wpf.AvalonDock, Version=3.6.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.6.0\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero, Version=3.6.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.6.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Metro, Version=3.6.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.6.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.VS2010, Version=3.6.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.6.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit, Version=3.6.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.6.0\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="ExtendedApp.xaml.cs" />
+    <Compile Include="TesterContext.cs" />
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RealSense.Tools.MyTester.Tests\RealSense.Tools.MyTester.Tests.csproj">
+      <Project>{8cfc48a0-faff-406c-9ff8-18f00fac2ebd}</Project>
+      <Name>RealSense.Tools.MyTester.Tests</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\IVCAM.Tools.TestersCore.6.8.0\build\IVCAM.Tools.TestersCore.targets" Condition="Exists('..\packages\IVCAM.Tools.TestersCore.6.8.0\build\IVCAM.Tools.TestersCore.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\IVCAM.Tools.TestersCore.6.8.0\build\IVCAM.Tools.TestersCore.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\IVCAM.Tools.TestersCore.6.8.0\build\IVCAM.Tools.TestersCore.targets'))" />
+    <Error Condition="!Exists('..\packages\MaterialDesignThemes.3.1.3\build\MaterialDesignThemes.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MaterialDesignThemes.3.1.3\build\MaterialDesignThemes.targets'))" />
+    <Error Condition="!Exists('..\packages\DepthCameras.x64.1.7.1\build\DepthCameras.x64.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\DepthCameras.x64.1.7.1\build\DepthCameras.x64.targets'))" />
+    <Error Condition="!Exists('..\packages\DeviceNotifier.2.3.0\build\DeviceNotifier.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\DeviceNotifier.2.3.0\build\DeviceNotifier.targets'))" />
+    <Error Condition="!Exists('..\packages\PerCHW.Tools.CameraHW.Nuget.DS5.Full.2.37.1\build\PerCHW.Tools.CameraHW.Nuget.DS5.Full.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\PerCHW.Tools.CameraHW.Nuget.DS5.Full.2.37.1\build\PerCHW.Tools.CameraHW.Nuget.DS5.Full.targets'))" />
+  </Target>
+  <Import Project="..\packages\MaterialDesignThemes.3.1.3\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.3.1.3\build\MaterialDesignThemes.targets')" />
+  <Import Project="..\packages\DepthCameras.x64.1.7.1\build\DepthCameras.x64.targets" Condition="Exists('..\packages\DepthCameras.x64.1.7.1\build\DepthCameras.x64.targets')" />
+  <Import Project="..\packages\DeviceNotifier.2.3.0\build\DeviceNotifier.targets" Condition="Exists('..\packages\DeviceNotifier.2.3.0\build\DeviceNotifier.targets')" />
+  <Import Project="..\packages\PerCHW.Tools.CameraHW.Nuget.DS5.Full.2.37.1\build\PerCHW.Tools.CameraHW.Nuget.DS5.Full.targets" Condition="Exists('..\packages\PerCHW.Tools.CameraHW.Nuget.DS5.Full.2.37.1\build\PerCHW.Tools.CameraHW.Nuget.DS5.Full.targets')" />
+</Project>

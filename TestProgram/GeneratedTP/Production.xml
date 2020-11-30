@@ -1,0 +1,16 @@
+<?xml version='1.0'?>
+<TestProgram TesterMode="Production" ModuleVersion="IVCAM_20" Description="Production" Name="TpExample">
+  <TestParameters>
+    <Parameter Name="dummy" Value="true"/>
+  </TestParameters>
+  <Section Name="Quality">
+    <Category HardBin="11" Name="Dummy">
+      <Metric SoftBin="1" Name="d" Min="1" Max="2" Mandatory="true" Type="Number" />
+    </Category>
+  </Section>
+  <Binning Version="1.0">
+    <BinCategory HardBin="3" Name="Startup">
+      <SoftBin ID="01" Key="Camera not found"/>
+    </BinCategory>
+  </Binning>
+</TestProgram>
