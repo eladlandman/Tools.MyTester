@@ -26,6 +26,7 @@ namespace RealSense.Tools.MyTester.Tests
         {
             dut.Logger.Info("Starting Second Test");
             return new PassTestResult();
+
         }
         
         protected override BinningTestResult InternalRun(Ds5Dut dut, CancellationToken token)
